@@ -19,46 +19,11 @@ public class EventPlannerTest {
         Assert.assertTrue(true); // Assuming adding attendee to event is successful
     }
 
-    @Test(dependsOnGroups = {"eventCreation"}, groups = {"scheduleEvent"})
+    @Test(dependsOnGroups = {"addAttendee"}, groups = {"scheduleEvent"})
     public void testScheduleEvent() {
         // Implementation of event scheduling
         System.out.println("Schedule event test");
         Assert.assertTrue(true); // Assuming event scheduling is successful
-    }
-
-    @Test(dependsOnGroups = {"addAttendee"})
-    public void testAttendeeNotification() {
-        // Implementation of attendee notification
-        System.out.println("Attendee notification test");
-        Assert.assertTrue(true); // Assuming attendee notification is successful
-    }
-
-    @Test(dependsOnGroups = {"scheduleEvent"})
-    public void testEventReminder() {
-        // Implementation of event reminder
-        System.out.println("Event reminder test");
-        Assert.assertTrue(true); // Assuming event reminder is successful
-    }
-
-    @Test(dependsOnGroups = {"eventCreation"}, groups = {"deleteEvent"})
-    public void testDeleteEvent() {
-        // Implementation of event deletion
-        System.out.println("Delete event test");
-        Assert.assertTrue(true); // Assuming event deletion is successful
-    }
-
-    @Test(dependsOnGroups = {"deleteEvent"})
-    public void testDeletedEventNotification() {
-        // Implementation of deleted event notification
-        System.out.println("Deleted event notification test");
-        Assert.assertTrue(true); // Assuming deleted event notification is successful
-    }
-
-    @Test(dependsOnGroups = {"deleteEvent"})
-    public void testDeletedEventCleanup() {
-        // Implementation of deleted event cleanup
-        System.out.println("Deleted event cleanup test");
-        Assert.assertTrue(true); // Assuming deleted event cleanup is successful
     }
 }
 
