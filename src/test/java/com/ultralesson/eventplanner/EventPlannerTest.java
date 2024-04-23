@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EventPlannerTest {
-
     @Test(groups = {"eventCreation"})
     public void testEventCreation() {
         // Implementation of event creation

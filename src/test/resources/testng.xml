@@ -1,18 +1,28 @@
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--runs all the test classes-->
-<suite name="suite">
+<suite name="EventPlannerSuite">
     <listeners>
-        <listener class-name="com.ultralesson.eventplanner.TestReport"></listener>
+        <listener class-name="com.ultralesson.eventplanner.TestReport"/>
     </listeners>
-    <test name="test1">
+    <test name="EventPlannerTestSuite">
+        <groups>
+            <dependencies>
+                <group name="addAttendee" depends-on="eventCreation"/>
+                <group name="scheduleEvent" depends-on="addAttendee"/>
+            </dependencies>
+        </groups>
         <classes>
             <class name="com.ultralesson.eventplanner.AttendeeTest"/>
             <class name="com.ultralesson.eventplanner.EventTest"/>
             <class name="com.ultralesson.eventplanner.VenueTest"/>
+            <class name="com.ultralesson.eventplanner.EventPlannerTest"/>
         </classes>
     </test>
 </suite>
+
 <!--________________________________________________________________________-->
 <!--runs the test methods which are grouped under creation-->
 <!--<suite name="Tests">-->
@@ -49,3 +59,21 @@
 <!--    </classes>-->
 <!--</test>-->
 <!--</suite>-->
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+        <!--&lt;!&ndash;runs all the test classes&ndash;&gt;-->
+        <!--<suite name="suite">-->
+        <!--    <listeners>-->
+        <!--        <listener class-name="com.ultralesson.eventplanner.TestReport"></listener>-->
+        <!--    </listeners>-->
+        <!--    <test name="test1">-->
+        <!--        <classes>-->
+        <!--            <class name="com.ultralesson.eventplanner.AttendeeTest"/>-->
+        <!--            <class name="com.ultralesson.eventplanner.EventTest"/>-->
+        <!--            <class name="com.ultralesson.eventplanner.VenueTest"/>-->
+        <!--        </classes>-->
+        <!--    </test>-->
+        <!--</suite>-->
+        <!--________________________________________________________________________-->
